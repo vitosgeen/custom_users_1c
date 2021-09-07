@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function custom_users_1c_menu() {
+  $items['users_1c/form'] = array(
+    'title' => 'User form',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('custom_users_1c_form'),
+    'access callback' => TRUE,
+    'description' => 'User form',
+    'file' => 'custom_users_1c_form.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['users_1c/view'] = array(
+    'title' => 'View users 1c',
+    'description' => 'View users 1c',
+    'page callback' => 'custom_users_1c_view',
+    'access arguments' => array('access content'),
+    'file' => 'custom_users_1c_view.inc',
+  );
+
+  return $items;
+}

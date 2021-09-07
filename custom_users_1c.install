@@ -1,0 +1,74 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function custom_users_1c_schema() {
+  $schema['users_1c'] = array(
+    'description' => 'Stores users 1c.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary Key: Unique user_1c ID.',
+      ),
+      'id_contr' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'IDContr',
+      ),
+      'description_full' => array(
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => true,
+          'description' => 'DescriptionFull',
+      ),
+      'description' => array(
+          'type' => 'text',
+          'size' => 'big',
+          'not null' => true,
+          'description' => 'Description',
+      ),
+      'edrpou' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'EDRPOU',
+      ),
+      'main_manager' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'MainManager',
+      ),
+      'code' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'Code',
+      ),
+      'inn' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'INN',
+      ),
+      'main_contact' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'description' => 'MainContact',
+      ),
+    ),
+    'primary key' => array('id'),
+    'indexes' => array(
+      'id_contr' => array('id_contr'),
+      'inn' => array('inn'),
+      'main_contact' => array('main_contact'),
+    ),
+  );
+
+  return $schema;
+}
