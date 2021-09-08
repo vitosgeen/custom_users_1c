@@ -23,3 +23,22 @@ function custom_users_1c_menu() {
 
   return $items;
 }
+
+/**
+ * Implements hook_entity_info()
+ */
+function custom_users_1c_entity_info() {
+  return array(
+    'users_1c' => array(
+      'label' => t('Storage users_1c'),
+      'controller class' => 'Users1cController',
+      'base table' => 'users_1c',
+      'uri callback' => 'users_1c',
+      'fieldable' => FALSE,
+      'entity keys' => array(
+        'id' => 'user_id',
+      ),
+      'module' => 'custom_users_1c',
+    ),
+  );
+}

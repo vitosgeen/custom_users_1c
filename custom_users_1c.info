@@ -2,3 +2,5 @@ name = Custom Users_1c
 description = Work user with 1c Users_1c
 package = User1c
 core = 7.x
+
+files[] = custom_users_1c_entity.inc

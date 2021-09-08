@@ -7,7 +7,7 @@ function custom_users_1c_schema() {
   $schema['users_1c'] = array(
     'description' => 'Stores users 1c.',
     'fields' => array(
-      'id' => array(
+      'user_id' => array(
         'type' => 'serial',
         'unsigned' => TRUE,
         'not null' => TRUE,
@@ -62,7 +62,7 @@ function custom_users_1c_schema() {
         'description' => 'MainContact',
       ),
     ),
-    'primary key' => array('id'),
+    'primary key' => array('user_id'),
     'indexes' => array(
       'id_contr' => array('id_contr'),
       'inn' => array('inn'),
